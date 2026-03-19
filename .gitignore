@@ -12,3 +12,6 @@ __pycache__/
 
 # VS CODE settings
 .vscode/
+
+# Autogen cache
+.cache/
