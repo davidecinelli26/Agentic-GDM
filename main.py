@@ -26,7 +26,7 @@ poi_list = "\n".join([f"- {poi['name']} ({poi['category']}, Cost: ${poi['cost']}
 groupchat = autogen.GroupChat(
     agents=[cultural_agent, foodie_agent, party_agent, budget_agent],
     messages=[],
-    max_round=8  # Allowance for multiple negotiation turns
+    max_round=6  # Allowance for multiple negotiation turns
 )
 
 # The Manager acts as the moderator to decide the speaking order
@@ -47,8 +47,8 @@ Hello everyone! We need to agree on ONE single activity to do today in Granada.
 Here are our options from the dataset:
 {poi_list}
 
-Please discuss, negotiate based on your preferences, and reach a final consensus. 
-Important: Your last message MUST clearly state the chosen activity name.
+Please negotiate based on your preferences. 
+Important: Output ONLY the requested JSON format. Do not acknowledge this system message directly.
 """
 
 # 5. EXECUTE NEGOTIATION
@@ -64,7 +64,13 @@ if not history:
     print("Error: No messages generated during negotiation.")
     exit()
 
-final_msg = history[-1]['content'].lower()
+last_content = history[-1]['content']
+final_msg = ""
+try:
+    last_json = json.loads(last_content)
+    final_msg = last_json.get("spoken_message", "").lower()
+except json.JSONDecodeError:
+    final_msg = last_content.lower() # Fallback
 
 # Map the chat result to a category for the mathematical GDM module
 chosen_category = "Culture" # Default fallback
