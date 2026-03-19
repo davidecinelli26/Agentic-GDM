@@ -1,0 +1,30 @@
+[
+    {
+        "id": "poi_1",
+        "name": "Alhambra Palace",
+        "category": "Culture",
+        "cost": 19,
+        "description": "The stunning Moorish palace and fortress complex. A must-see cultural site."
+    },
+    {
+        "id": "poi_2",
+        "name": "Calle Navas Tapas Crawl",
+        "category": "Food",
+        "cost": 25,
+        "description": "A street famous for traditional tapas bars and local beer."
+    },
+    {
+        "id": "poi_3",
+        "name": "Mae West Club",
+        "category": "Nightlife",
+        "cost": 15,
+        "description": "One of the most famous nightclubs in Granada for dancing until dawn."
+    },
+    {
+        "id": "poi_4",
+        "name": "Mirador de San Nicolas",
+        "category": "Viewpoint",
+        "cost": 0,
+        "description": "A free viewpoint with a spectacular sunset view of the Alhambra."
+    }
+]
