@@ -1,0 +1,14 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Configuration file with sensitive information
+.env
+
+# Temporary files
+__pycache__/
+*.py[cod]
+
+# VS CODE settings
+.vscode/
