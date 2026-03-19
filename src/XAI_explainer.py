@@ -1,6 +1,6 @@
 import json
 import autogen
-from agents import llm_config
+from src.agents import llm_config
 
 def generate_explanation(chat_history):
     """
